@@ -1,0 +1,52 @@
+@font-face {
+    font-family: title;
+    src: url(/assets/fonts/Handlee-Regular.ttf);
+  }
+
+#climax {
+    font-family: title;
+    font-size: 50px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color:black
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #000000;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal; /* Allow wrapping of text inside the cell */
+    max-width: 300px; /* Optional: Limit the width if you want it to be more compact */
+    overflow-wrap: break-word;
+}
+
+#deleteButton {
+    color: white;
+    font-weight: 700;
+    background-color: #c41f1f;
+    border-radius: 10px;
+}
+
+#portfolioButton {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: hsl(219, 100%, 50%);
+    border-radius: 10px;
+}

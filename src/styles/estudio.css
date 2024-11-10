@@ -1,0 +1,203 @@
+@font-face {
+    font-family: title;
+    src: url(/assets/fonts/Handlee-Regular.ttf);
+  }
+
+#climax {
+    font-family: title;
+    font-size: 50px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color:black
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header */
+
+.reserve-btn {
+    background-color: #c9a97e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.reserve-btn:hover {
+    background-color: #b08e64;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    padding: 100px 20px;
+    color: #000000; 
+    position: relative;
+}
+
+.main-content h2 {
+    font-size: 48px; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    margin-bottom: 35px;
+    /*text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);  Sombra para dar destaque */
+}
+
+/* Ajuste para o header */
+.header img {
+    width: auto; /* Faz a imagem ocupar sua largura original */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Section 2 */
+.info-section {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    color: #000000; 
+    margin: 30px;
+    border-radius: 40px;
+    background-color: rgb(226, 243, 253);
+}
+
+.info-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-image img {
+    width: 100%;
+    border-radius: 15px; 
+}
+
+.info-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Botão "Conheça nossos pacotes" */
+.package-btn {
+    background-color: #c9a97e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 15px; /* Espaçamento acima do botão */
+}
+
+.package-btn:hover {
+    background-color: #b08e64;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-image, .info-text {
+        padding: 10px;
+    }
+
+    .info-image img {
+        max-width: 80%; 
+        margin: 0 auto;
+    }
+}
+
+/* Photo for Closed */
+.section {
+    display: flex;
+    background-color: #000;
+    margin: 30px;
+    border-radius: 40px;
+    padding: 40px;
+}
+
+.section:nth-child(2) .text-content {
+    order: 1; 
+}
+
+.section:nth-child(2) .image-container {
+    order: 2; 
+}
+
+.image-container {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 700px;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px; 
+    color: white; 
+}
+
+.text-content p {
+    line-height: 1.8; 
+    color: white; 
+    font-size: 16px; 
+    margin: 10px 0; 
+    padding-left: 15px; 
+    border-left: 4px solid #000508; 
+    transition: all 0.3s ease; 
+}
+
+/* Remover margens indesejadas */
+.info-section,
+.section {
+    margin-bottom: 0; /* Remove a margem inferior */
+}
+
+/* Adicione essa classe para garantir que não haja espaço indesejado */
+body {
+    margin: 0; /* Garante que o body não tenha margens */
+}
+
+.package-btn {
+    display: block; /* Faz o botão ocupar toda a largura disponível */
+    margin: 20px auto; /* Adiciona margem em cima e embaixo e centraliza horizontalmente */
+    background-color: #c9a97e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center; /* Centraliza o texto dentro do botão */
+}
+
+.package-btn:hover {
+    background-color: #b08e64;
+}
+
+
+

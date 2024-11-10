@@ -1,0 +1,62 @@
+.cabecario>header>nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 135px;
+  background-color: #292929;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: arima;
+  font-size: 16px;
+}
+
+button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #ffffff;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+
+.cabecario>header>nav>button>a {
+
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
+.cabecario>header>nav>button>a:hover {
+
+  color: #292929;
+
+}

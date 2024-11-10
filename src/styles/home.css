@@ -1,0 +1,158 @@
+@font-face {
+  font-family: title;
+  src: url(../../public/assets/fonts/Handlee-Regular.ttf);
+}
+
+#climax {
+  font-family: title;
+  font-size: 50px;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color:black
+}
+
+h1 {
+
+  display: flex;
+  justify-content: center;
+  
+}
+
+#image-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-box {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-box:hover img {
+  transform: scale(1.1);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  font-family: italianno;
+  font-size: 70px;
+}
+
+#img1 img {
+  height: auto;
+
+}
+
+#img2 img {
+  height: auto;
+}
+
+#img3 img {
+  height: auto;
+
+}
+
+.container {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.top-section {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.top-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #292929;
+  padding: 15px 80px;
+  border-radius: 5px;
+  width: auto;
+  text-align: center;
+}
+
+.caption h1 {
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.caption p {
+  font-size: 16px;
+  font-style: italic;
+  color: white;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: -1px;
+  border: 2px solid black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-color: #ffcc00;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
