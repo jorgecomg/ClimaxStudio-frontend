@@ -28,7 +28,7 @@ function Eventos() {
     useEffect(() => {
         const fetchEventos = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/evento');
+                const response = await axios.get('http://4.228.228.49:5001/evento');
                 console.log("Fetched data: ", response.data); 
                 setEventos(response.data.flat());
             } catch (err) {
@@ -46,7 +46,7 @@ function Eventos() {
     const handleDelete = async (id) => {
         if (confirm('Tem certeza que deseja deletar o item de id ' + id + "?")) {
             try {
-                await axios.delete(`http://localhost:5001/evento/${id}`);
+                await axios.delete(`http://4.228.228.49:5001/evento/${id}`);
                 setEventos(eventos.filter(evento => evento.id !== id)); 
             } catch (err) {
                 setError("Error deleting event");
