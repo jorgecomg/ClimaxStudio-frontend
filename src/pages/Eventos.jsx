@@ -95,7 +95,6 @@ function Eventos() {
                             <td>{evento.pacote}</td>
                             <td>
                                 <button onClick={() => handleDelete(evento.id)} id="deleteButton">Deletar</button>
-                                <button onClick={() => handleEdit(evento.id)} id="editButton">Editar</button>
                             </td>
                         </tr>
                     ))}

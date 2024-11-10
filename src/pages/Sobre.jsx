@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import '../styles/sobremim.css';
 
 function Sobre() {
@@ -33,7 +34,9 @@ function Sobre() {
         <p>Hoje, continuo minha jornada, sempre em busca de novas aventuras fotográficas. Com um olhar atento e um coração aberto, estou pronto para capturar cada sorriso, lágrima e alegria que a vida oferece. Meu objetivo é simples: fazer com que cada cliente se sinta especial e que suas memórias sejam eternizadas em imagens que falam por si mesmas.</p>
       </div>
     </section>
+    <Footer />
         </div>
+        
 
     );
 }
