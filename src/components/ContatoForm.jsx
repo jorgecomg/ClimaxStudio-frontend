@@ -26,7 +26,7 @@ function ContatoForm() {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://4.228.228.49:5001/evento', formData);
+            const response = await axios.post('http://localhost:5001/evento', formData);
             alert(`Enviado com sucesso!`);
             // Reset form fields after successful submission
             setFormData({
