@@ -32,12 +32,19 @@ th {
 td {
     word-wrap: break-word;
     word-break: break-word;
-    white-space: normal; /* Allow wrapping of text inside the cell */
-    max-width: 300px; /* Optional: Limit the width if you want it to be more compact */
+    white-space: normal;
+    max-width: 300px; 
     overflow-wrap: break-word;
 }
 
-#deleteButton {
+#yellowButton {
+    color: white;
+    font-weight: 700;
+    background-color: #f8c82b;
+    border-radius: 10px;
+}
+
+#redButton {
     color: white;
     font-weight: 700;
     background-color: #c41f1f;
