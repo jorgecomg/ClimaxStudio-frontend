@@ -12,7 +12,7 @@ function LoginForm() {
         e.preventDefault();
         
         try {
-            const response = await axios.get('http://4.228.228.49:5001/login', {
+            const response = await axios.get('http://localhost:5001/login', {
                 params: {
                     email: email,
                     senha: senha
