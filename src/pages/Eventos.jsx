@@ -7,6 +7,8 @@ import axios from 'axios';
 function Eventos() {
     const [eventos, setEventos] = useState([]);
     const [error, setError] = useState("");
+    const [showModal, setShowModal] = useState(false);
+    const [currentEvento, setCurrentEvento] = useState(null);
     const navigate = useNavigate();
 
     const token = sessionStorage.getItem('token');
@@ -15,13 +17,34 @@ function Eventos() {
         return <Navigate to="/login" />;
     }
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setCurrentEvento((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSave = async () => {
+        try {
+            await axios.put(
+                `http://4.228.228.49:5001/evento/${currentEvento.id}`,
+                currentEvento
+            );
+            setEventos((prev) =>
+                prev.map((evt) =>
+                    evt.id === currentEvento.id ? currentEvento : evt
+                )
+            );
+            setShowModal(false);
+            alert("Evento atualizado com sucesso!");
+        } catch (err) {
+            alert("Erro ao atualizar o evento.");
+        }
+    };
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        if (isNaN(date)) {
-            return "Invalid Date";
-        }
-        return date.toLocaleDateString();
+        return date.toLocaleDateString("pt-BR", {
+            timeZone: "UTC",
+        });
     };
 
 
@@ -40,7 +63,7 @@ function Eventos() {
     }, []);
     
     useEffect(() => {
-        console.log("Updated eventos state: ", eventos); 
+        console.log(eventos); 
     }, [eventos]); 
 
     const handleDelete = async (id) => {
@@ -55,8 +78,9 @@ function Eventos() {
     };
 
 
-    const handleEdit = (id) => {
-        navigate(`/edit-evento/${id}`);
+    const handleEdit = (evento) => {
+        setCurrentEvento(evento);
+        setShowModal(true); 
     };
 
     return (
@@ -94,12 +118,100 @@ function Eventos() {
                             <td>{evento.mensagem}</td>
                             <td>{evento.pacote}</td>
                             <td>
-                                <button onClick={() => handleDelete(evento.id)} id="deleteButton">Deletar</button>
+                                <button onClick={() => handleDelete(evento.id)} id="redButton">Deletar</button>
+                                <button
+                                    onClick={() => handleEdit(evento)} id="yellowButton">Editar</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Editar Evento</h2>
+                        <form>
+                            <label>
+                                Nome:
+                                <input
+                                    type="text"
+                                    name="nome"
+                                    value={currentEvento.nome}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                            <label>
+                                Email:
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={currentEvento.email}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                            <label>
+                                Telefone:
+                                <input
+                                    type="text"
+                                    name="telefone"
+                                    value={currentEvento.telefone}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                            <label>
+                                Data:
+                                <input
+                                    type="date"
+                                    name="data"
+                                    value={currentEvento.data}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                            <label>
+                                Local:
+                                <input
+                                    type="text"
+                                    name="local"
+                                    value={currentEvento.local}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                            <label>
+                                Mensagem:
+                                <textarea
+                                    name="mensagem"
+                                    value={currentEvento.mensagem}
+                                    onChange={handleInputChange}
+                                ></textarea>
+                            </label>
+                            <label>
+                                Pacote:
+                                <select
+                                    name="pacote"
+                                    value={currentEvento.pacote}
+                                    onChange={handleInputChange}
+                                >
+                                    <option value="Pacote Básico">
+                                        Pacote Básico
+                                    </option>
+                                    <option value="Pacote Intermediário">
+                                        Pacote Intermediário
+                                    </option>
+                                    <option value="Pacote Premium">
+                                        Pacote Premium
+                                    </option>
+                                </select>
+                            </label>
+                            <button type="button" id="yellowButton" onClick={handleSave}>
+                                Salvar
+                            </button>
+                            <button type="button" id="redButton" onClick={() => setShowModal(false)}>
+                                Cancelar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
